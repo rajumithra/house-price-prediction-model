@@ -38,4 +38,4 @@ def predict():
 
     return render_template('index.html',prediction=prediction)
 if __name__=="__main__":
-application.run()
+    application.run()
