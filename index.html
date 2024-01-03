@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Price Prediction</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #000; /* Black background */
+            color: #fff; /* White text color */
+            margin: 0;
+            padding: 0;
+        }
+
+        h1, h2 {
+            color: #ff0000; /* Red color for headings */
+        }
+
+        form {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #333; /* Dark gray background */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); /* White box shadow */
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #fff; /* White text color for labels */
+        }
+
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            border: 1px solid #ff0000; /* Red border */
+            border-radius: 4px;
+            background-color: #444; /* Dark gray background for inputs */
+            color: #fff; /* White text color for inputs */
+        }
+
+        input[type="submit"] {
+            background-color: #ff0000; /* Red color for the button */
+            color: #fff; /* White text color */
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #990000; /* Darker red color on hover */
+        }
+
+        h2 {
+            margin-top: 30px;
+            color: #ff0000; /* Red color for secondary headings */
+        }
+
+        p {
+            color: #fff;
+            font-size: 18px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>House Price Prediction</h1>
+
+    <form method="post" action="/predict">
+        <label>No of Bedrooms</label>
+        <input type="number" name="bedrooms"><br><br>
+
+        <label>No of Bathrooms</label>
+        <input type="number" name="bathrooms"><br><br>
+
+        <label>Location</label>
+        <select name="location">
+            <option value="0">Benz Circle</option>
+            <option value="1">Enikepadu</option>
+            <option value="2">Gannavaram</option>
+            <option value="3">Gollapudi</option>
+            <option value="4">Gunadala</option>
+            <option value="5">Kankipadu</option>
+            <option value="6">Payakapuram</option>
+            <option value="7">Penamaluru</option>
+            <option value="8">Poranki</option>
+            <option value="9">Rajarajeswari Peta</option>
+            <option value="10">Vidhyadharpuram</option>
+        </select><br><br>
+
+        <label>Area (in sqft)</label>
+        <input type="number" name="area"><br><br>
+
+        <label>Property Status</label>
+        <select name="status">
+            <option value="0">New</option>
+            <option value="1">Ready to move</option>
+            <option value="2">Resale</option>
+            <option value="3">Under Construction</option>
+        </select><br><br>
+
+        <label>Direction of Facing</label>
+        <select name="facing">
+            <option value="0">Not Mentioned</option>
+            <option value="1">East</option>
+            <option value="2">NorthEast</option>
+            <option value="3">West</option>
+        </select><br><br>
+
+        <label>Type of Property</label>
+        <select name="type">
+            <option value="0">Apartment</option>
+            <option value="1">Independent Floor</option>
+            <option value="2">Independent House</option>
+            <option value="3">Residential Plot</option>
+        </select><br><br>
+
+        <input type="submit" value="Predict">
+        
+    </form>
+
+    <h2> House Price Prediction Result </h2>
+    <p> Predicted House Price : ₹ {{ prediction }} Lakhs</p>
+</body>
+</html>
